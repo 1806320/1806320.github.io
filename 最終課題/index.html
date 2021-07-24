@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>最終課題</title>
+    <link rel="stylesheet" href="css/base.css">
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="/最終課題/css/base.css"> -->
+</head>
+<!-- 名前をまずは入力するボックスを作成。ボタンに設定し、その後診断結果を表示できるようにする -->
+<!-- 診断結果を箇条書きで表示する。この際それぞれのステータスは0~100の乱数によって選ぶ -->
+<!-- 終わり -->
+
+<body>
+    <header>
+        <h1 id=top>ステータス診断</h1>
+        <p>フォームに名前を入力するとステータスがランダムな数値で表示されます。</p>
+    </header>
+    <form action="" method="post">
+        <label for="text_id">名前：</label>
+        <input type="text" id="text_id" placeholder="例:ベジータ" size="30" required>
+        <button id="button1" type="button" onclick="showMessage()">送信</button>
+    </form>
+    <div>
+        <p id="name_text"></p>
+        <script language="javascript" type="text/javascript">
+            var showMessage = () => {
+                var textbox = document.getElementById("text_id");
+                var inputValue = textbox.value;
+                var output = "「" + inputValue + "」さんのステータスは";
+                document.getElementById("name_text").innerHTML = output;
+            }
+        </script>
+    </div>
+    <div name="show1" style="display: none;">
+        <script language="JavaScript" type="text/javascript">
+            document.write("Lv：", Math.floor(Math.random() * 101) + 1, "<br>");
+            document.write("HP：", Math.floor(Math.random() * 101) + 1, "<br>");
+            document.write("MP：", Math.floor(Math.random() * 101), "<br>");
+            document.write("STR：", Math.floor(Math.random() * 101), "<br>");
+            document.write("VIT：", Math.floor(Math.random() * 101), "<br>");
+            document.write("DEX：", Math.floor(Math.random() * 101), "<br>");
+            document.write("AGI：", Math.floor(Math.random() * 101), "<br>");
+            document.write("INT：", Math.floor(Math.random() * 101), "<br>");
+        </script>
+    
+    </div>
+   <div id="kanosu">
+       <h3>大変だったところ</h3>
+       <li>いっぱい乱数を作成するところ</li>
+       <li>非表示の状態からボタンを押すことによって表示させるところ</li>
+       <li>いろいろなサイトを探し回ったせいでjqueryができているのかよくわからないところ</li>
+       <li>なんか全然idで指定できないところ(本当はshow1を非表示にしたかった。仕方なくdivでやりました)</li>
+       <li>と思っていた時期が私にもありました（できました）</li>
+       <li>本当はredo機能をつけたかった</li>
+   </div>
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+       crossorigin="anonymous"></script>
+       <script src="js/kadai.js"></script>
+</body>
+
+</html>
